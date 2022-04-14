@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import Sandbox from './Sandbox';
 
 export default function App() {
   const [name, setName] = useState('');
@@ -26,19 +27,20 @@ export default function App() {
   }
 
   return (
+    <Sandbox/>
     
-    <View style={styles.container}>
-      <FlatList
-        numColumns={2}
-        keyExtractor={(item) => item.id}
-        data={person}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={()=>pressHandler(item.id)}>
-            <Text style={styles.item}>{item.name}</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    // <View style={styles.container}>
+    //   <FlatList
+    //     numColumns={2}
+    //     keyExtractor={(item) => item.id}
+    //     data={person}
+    //     renderItem={({ item }) => (
+    //       <TouchableOpacity onPress={()=>pressHandler(item.id)}>
+    //         <Text style={styles.item}>{item.name}</Text>
+    //       </TouchableOpacity>
+    //     )}
+    //   />
+    // </View>
 
     
     // <View style={styles.container}>
